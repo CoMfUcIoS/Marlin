@@ -21,6 +21,8 @@
  */
 #pragma once
 
+#define CONFIG_EXAMPLES_DIR "Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 3.0"
+
 /**
  * Configuration.h
  *
@@ -60,7 +62,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(comfucios, Ender-3 Pro)" // Who made the changes.
 // #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -78,10 +80,10 @@
 #define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
-// #define SHOW_CUSTOM_BOOTSCREEN
+#define SHOW_CUSTOM_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Statusscreen.h on the status screen.
-// #define CUSTOM_STATUS_SCREEN_IMAGE
+#define CUSTOM_STATUS_SCREEN_IMAGE
 
 // @section machine
 
@@ -98,7 +100,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT -1 // USB
+#define SERIAL_PORT 2
 
 /**
  * Serial Port Baud Rate
@@ -120,8 +122,8 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-// #define SERIAL_PORT_2 -1
-#define BAUDRATE_2 115200 // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
+#define SERIAL_PORT_2 -1
+// #define BAUDRATE_2 250000   // Enable to override BAUDRATE
 
 /**
  * Select a third serial port on the board to use for communication with the host.
@@ -135,7 +137,7 @@
 // #define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-// #define CUSTOM_MACHINE_NAME "3D Printer"
+#define CUSTOM_MACHINE_NAME "Ender-3 Pro"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -694,9 +696,9 @@
     114.00, 114.00      \
   }
 #else
-#define DEFAULT_Kp 22.20
-#define DEFAULT_Ki 1.08
-#define DEFAULT_Kd 114.00
+#define DEFAULT_Kp 21.73
+#define DEFAULT_Ki 1.54
+#define DEFAULT_Kd 76.55
 #endif
 #endif
 
@@ -800,9 +802,9 @@
 
 // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
 // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-#define DEFAULT_bedKp 10.00
-#define DEFAULT_bedKi .023
-#define DEFAULT_bedKd 305.4
+#define DEFAULT_bedKp 41.78
+#define DEFAULT_bedKi 7.32
+#define DEFAULT_bedKd 158.93
 
 // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -879,7 +881,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 450
+#define EXTRUDE_MAXLENGTH 600
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -1209,29 +1211,29 @@
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define I_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define J_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define K_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define U_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define V_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define W_MIN_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define I_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define J_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define K_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define U_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define V_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
-#define W_MAX_ENDSTOP_INVERTING false      // Set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define I_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define J_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define K_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define U_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define V_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define W_MIN_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define X_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define I_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define J_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define K_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define U_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define V_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
+#define W_MAX_ENDSTOP_INVERTING false       // Set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
-// #define ENDSTOP_INTERRUPTS_FEATURE
+#define ENDSTOP_INTERRUPTS_FEATURE
 
 /**
  * Endstop Noise Threshold
@@ -1383,7 +1385,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-// #define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -2780,7 +2782,7 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-// #define SPEAKER
+#define SPEAKER
 
 //
 // The duration and frequency for the UI feedback sound.
@@ -2789,8 +2791,8 @@
 // Note: Test audio output with the G-Code:
 //  M300 S<frequency Hz> P<duration ms>
 //
-// #define LCD_FEEDBACK_FREQUENCY_DURATION_MS 2
-// #define LCD_FEEDBACK_FREQUENCY_HZ 5000
+#define LCD_FEEDBACK_FREQUENCY_DURATION_MS 20
+#define LCD_FEEDBACK_FREQUENCY_HZ 1000
 
 //=============================================================================
 //======================== LCD / Controller Selection =========================
